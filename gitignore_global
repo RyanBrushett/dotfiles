@@ -1,0 +1,18 @@
+.idea/
+.DS_Store
+npm-debug.log
+.swp
+.tags
+secrets.json
+.ruby-version
+
+# swap
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+# session
+Session.vim
+# temporary
+.netrwhist
+*~
+# auto-generated tag files
+tags

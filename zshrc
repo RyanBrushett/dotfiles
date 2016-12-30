@@ -44,7 +44,5 @@ alias gfa='git fetch --all --prune;'
 if [[ -f /opt/dev/dev.sh ]]; then source /opt/dev/dev.sh; fi
 if [[ -f ~/.zshrc_additional ]]; then source ~/.zshrc_additional; fi
 
-ssh-add
-ssh-add ~/.ssh/terraform
 chruby 2.3.3
 

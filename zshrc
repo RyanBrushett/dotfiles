@@ -1,4 +1,4 @@
-export ZSH=/Users/ryanbrushett/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 DISABLE_UPDATE_PROMPT=true
 CASE_SENSITIVE="false"
 HYPHEN_INSENSITIVE="true"
@@ -10,7 +10,7 @@ SAVEHIST=1000
 setopt appendhistory extendedglob nomatch
 unsetopt autocd beep notify
 bindkey -v
-zstyle :compinstall filename '/Users/ryanbrushett/.zshrc'
+zstyle :compinstall filename '$HOME/.zshrc'
 autoload -Uz compinit
 compinit
 autoload -Uz promptinit

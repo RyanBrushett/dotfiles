@@ -27,6 +27,7 @@ PROMPT="%F{2}%n%f %F{4}%1~%f %# "
 export MANPATH="/usr/share/man:/usr/local/share/man:/usr/X11/share/man"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 export GOPATH="$HOME"
+export EDITOR=/usr/bin/vim
 
 typeset -U path
 path=(/usr/local/opt/coreutils/libexec/gnubin $GOPATH/bin $path)
@@ -40,6 +41,7 @@ alias weathersj="curl wttr.in/yyt"
 alias parrot="parrot -delay 50 -loops 4"
 alias hurrdurr="echo 'ᕕ( ᐛ )ᕗ'"
 alias gfa='git fetch --all --prune;'
+alias dockerenv='eval $(docker-machine env dev)'
 
 if [[ -f /opt/dev/dev.sh ]]; then source /opt/dev/dev.sh; fi
 if [[ -f ~/.zshrc_additional ]]; then source ~/.zshrc_additional; fi

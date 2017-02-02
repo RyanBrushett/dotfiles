@@ -6,6 +6,7 @@ COMPLETION_WAITING_DOTS="true"
 HISTFILE=~/.histfile
 HISTSIZE=5000
 SAVEHIST=1000
+IFS=$'\n\t'
 
 setopt appendhistory extendedglob nomatch
 unsetopt autocd beep notify
@@ -42,6 +43,8 @@ alias parrot="parrot -delay 50 -loops 4"
 alias hurrdurr="echo 'ᕕ( ᐛ )ᕗ'"
 alias gfa='git fetch --all --prune;'
 
+source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
+source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
 if [[ -f /opt/dev/dev.sh ]]; then source /opt/dev/dev.sh; fi
 if [[ -f ~/.zshrc_additional ]]; then source ~/.zshrc_additional; fi
 

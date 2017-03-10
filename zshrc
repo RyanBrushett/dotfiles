@@ -1,3 +1,5 @@
+find $HOME -maxdepth 1 -name '.zcompdump*' -exec rm {} \;
+
 export ZSH=$HOME/.oh-my-zsh
 DISABLE_UPDATE_PROMPT=true
 CASE_SENSITIVE="false"
@@ -42,6 +44,7 @@ alias weathersj="curl wttr.in/yyt"
 alias parrot="parrot -delay 50 -loops 4"
 alias hurrdurr="echo 'ᕕ( ᐛ )ᕗ'"
 alias gfa='git fetch --all --prune;'
+alias brewup='brew update; brew upgrade; brew cleanup -s; brew cask cleanup;'
 
 source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
 source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'

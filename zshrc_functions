@@ -10,7 +10,7 @@ function rubolatest {
 }
 
 function rubocurrent {
-    for i in $(git ls-files -m | grep \.rb); do
+    for i in $(git diff --name-only --cached | grep '\.rb' || git ls-files -m | grep '\.rb'); do
         rubocop $i
     done;
 }

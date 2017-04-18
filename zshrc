@@ -1,3 +1,4 @@
+eval `/usr/libexec/path_helper -s`
 CASE_SENSITIVE="false"
 HYPHEN_INSENSITIVE="true"
 COMPLETION_WAITING_DOTS="true"

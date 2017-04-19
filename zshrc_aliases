@@ -7,3 +7,4 @@ alias parrot="parrot -delay 50 -loops 4"
 alias hurrdurr="echo 'ᕕ( ᐛ )ᕗ'"
 alias gfa='git fetch --all --prune;'
 alias brewup='brew update; brew upgrade; brew cleanup -s; brew cask cleanup;'
+alias devkates='dev open kubernetes;'

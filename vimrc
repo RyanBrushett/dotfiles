@@ -1,4 +1,5 @@
 set wrap
+set autoread
 set nocompatible
 set ts=2
 set sw=2
@@ -6,3 +7,18 @@ set expandtab
 set background=dark
 syntax on
 set ruler
+set cmdheight=2
+set hid
+set showmatch 
+set mat=2
+set encoding=utf8
+set nobackup
+set nowb
+set noswapfile
+set ai
+set si 
+set tw=120
+set cc=+1
+set hlsearch
+set incsearch
+nnoremap <silent>c :nohl<CR><C-l>

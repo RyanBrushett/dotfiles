@@ -41,3 +41,5 @@ zstyle :compinstall filename '/Users/ryanbrushett/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+
+export PATH="$HOME/.yarn/bin:$PATH"

@@ -18,7 +18,6 @@ export GOPATH="$HOME"
 path=(/usr/local/opt/coreutils/libexec/gnubin $GOPATH/bin $path)
 fpath=(/usr/local/share/zsh-completions $fpath)
 fpath=(${fpath} "/opt/dev/sh/autocomplete/zsh")
-export DISABLE_SPRING=1
 autoload -U compinit
 compinit
 

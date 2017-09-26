@@ -27,3 +27,12 @@ function tier {
 function gogland {
   open -a Gogland\ 1.0\ EAP .;
 }
+
+function prompt_header() {
+  BRANCH=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/')
+  if [[ -z $BRANCH ]]; then 
+    whoami
+  else 
+    echo $BRANCH;
+  fi;
+}

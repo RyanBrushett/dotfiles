@@ -5,7 +5,6 @@ COMPLETION_WAITING_DOTS="true"
 HISTFILE=~/.histfile
 HISTSIZE=5000
 SAVEHIST=1000
-PROMPT="%F{2}%n%f %F{4}%1~%f %# "
 setopt appendhistory extendedglob nomatch
 unsetopt autocd beep notify
 bindkey -v
@@ -26,7 +25,7 @@ if [[ -f ~/.zshrc_functions ]]; then source ~/.zshrc_functions; fi
 if [[ -f /opt/dev/sh/chruby/chruby.sh ]]; then source /opt/dev/sh/chruby/chruby.sh; fi
 if [[ -f ~/.zshrc_additional ]]; then source ~/.zshrc_additional; fi
 
-chruby 2.4.1
+chruby 2.4.2
 # The following lines were added by compinstall
 
 zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
@@ -40,5 +39,8 @@ zstyle :compinstall filename '/Users/ryanbrushett/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+
+autoload -U promptinit; promptinit
+prompt pure
 
 export PATH="$HOME/.yarn/bin:$PATH"

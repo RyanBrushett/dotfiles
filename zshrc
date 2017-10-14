@@ -42,5 +42,3 @@ compinit
 
 autoload -U promptinit; promptinit
 prompt pure
-
-export PATH="$HOME/.yarn/bin:$PATH"

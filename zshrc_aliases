@@ -1,4 +1,5 @@
 alias ls="ls --color=auto"
+alias echo="echo -e"
 alias grep="grep --color=auto"
 alias googler="googler -n3"
 alias weather="curl wttr.in/ottawa"
@@ -7,7 +8,6 @@ alias parrot="parrot -delay 50 -loops 4"
 alias hurrdurr="echo 'ᕕ( ᐛ )ᕗ'"
 alias gfa='git fetch --all --prune;'
 alias brewup='brew update; brew upgrade; brew cleanup -s; brew cask cleanup;'
-alias devkates='dev open kubernetes;'
 alias dadjoke='echo `curl -s https://icanhazdadjoke.com/`'
 alias lod='echo "ಠ_ಠ"'
 alias gitb='git branch'

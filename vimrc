@@ -21,4 +21,12 @@ set tw=120
 set cc=+1
 set hlsearch
 set incsearch
+
+execute pathogen#infect()
+filetype plugin indent on
+
 nnoremap <silent>c :nohl<CR><C-l>
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>

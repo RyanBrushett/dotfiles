@@ -25,7 +25,7 @@ if [[ -f ~/.zshrc_functions ]]; then source ~/.zshrc_functions; fi
 if [[ -f /opt/dev/sh/chruby/chruby.sh ]]; then source /opt/dev/sh/chruby/chruby.sh; fi
 if [[ -f ~/.zshrc_additional ]]; then source ~/.zshrc_additional; fi
 
-chruby 2.4.2
+chruby 2.4.3
 # The following lines were added by compinstall
 
 zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate

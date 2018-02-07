@@ -40,5 +40,8 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+bindkey "^[a" beginning-of-line
+bindkey "^[e" end-of-line
+
 autoload -U promptinit; promptinit
 prompt pure

@@ -1,6 +1,8 @@
 function dev {
-    if [[ -f /opt/dev/dev.sh ]]; then source /opt/dev/dev.sh; fi
-    dev "$@"
+    if [[ -f /opt/dev/dev.sh ]]; then 
+      source /opt/dev/dev.sh;
+      dev "$@";
+    fi;
 }
 
 function rubolatest {

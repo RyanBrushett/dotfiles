@@ -34,3 +34,7 @@ function prompt_header() {
     echo $BRANCH;
   fi;
 }
+
+function realpath() {
+    [[ $1 = /* ]] && echo "$1" || echo "$PWD/${1#./}"
+}

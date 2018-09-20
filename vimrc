@@ -1,4 +1,4 @@
-set wrap
+set nowrap
 set autoread
 set nocompatible
 set ts=2
@@ -22,11 +22,15 @@ set cc=+1
 set hlsearch
 set incsearch
 
-execute pathogen#infect()
-filetype plugin indent on
-
 nnoremap <silent>c :nohl<CR><C-l>
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+
+" Automatic toggling of relative and absolute line numbers
+
+set number relativenumber
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
+
+execute pathogen#infect()

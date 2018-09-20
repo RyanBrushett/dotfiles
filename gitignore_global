@@ -5,6 +5,8 @@ npm-debug.log
 .tags
 secrets.json
 .ruby-version
+.starscope.db
+cscope.out
 
 # swap
 [._]*.s[a-w][a-z]

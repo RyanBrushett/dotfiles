@@ -15,6 +15,7 @@ typeset -U path
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 export GOPATH="$HOME"
 path=(/usr/local/opt/coreutils/libexec/gnubin $GOPATH/bin $path)
+path=(/usr/local/opt/curl/bin $path)
 fpath=(/usr/local/share/zsh-completions $fpath)
 fpath=(${fpath} "/opt/dev/sh/autocomplete/zsh")
 autoload -U compinit
@@ -23,9 +24,13 @@ compinit
 if [[ -f ~/.zshrc_aliases ]]; then source ~/.zshrc_aliases; fi
 if [[ -f ~/.zshrc_functions ]]; then source ~/.zshrc_functions; fi
 if [[ -f /opt/dev/sh/chruby/chruby.sh ]]; then source /opt/dev/sh/chruby/chruby.sh; fi
+if [[ -f /opt/dev/dev.sh ]]; then source /opt/dev/dev.sh; fi;
 if [[ -f ~/.zshrc_additional ]]; then source ~/.zshrc_additional; fi
 
-chruby 2.5.0
+export LANGUAGE=en_GB.UTF-8
+export LC_ALL=en_GB.UTF-8
+
+chruby 2.5.3
 # The following lines were added by compinstall
 
 zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
@@ -45,4 +50,3 @@ bindkey "^[e" end-of-line
 
 autoload -U promptinit; promptinit
 prompt pure
-export PATH="/usr/local/opt/curl/bin:$PATH"

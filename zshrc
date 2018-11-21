@@ -14,6 +14,7 @@ zstyle :compinstall filename '$HOME/.zshrc'
 typeset -U path
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 export GOPATH="$HOME"
+export KUBECONFIG=${KUBECONFIG:+$KUBECONFIG:}/Users/ryanbrushett/.kube/config:/Users/ryanbrushett/.kube/config.shopify.cloudplatform
 path=(/usr/local/opt/coreutils/libexec/gnubin $GOPATH/bin $path)
 path=(/usr/local/opt/curl/bin $path)
 fpath=(/usr/local/share/zsh-completions $fpath)
@@ -50,3 +51,4 @@ bindkey "^[e" end-of-line
 
 autoload -U promptinit; promptinit
 prompt pure
+

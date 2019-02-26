@@ -1,5 +1,4 @@
 Pry.config.color = true
-Pry.config.prompt = Pry::NAV_PROMPT
 
 def a_list
   (0..6).to_a

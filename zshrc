@@ -15,6 +15,7 @@ typeset -U path
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 export GOPATH="$HOME"
 export KUBECONFIG=${KUBECONFIG:+$KUBECONFIG:}/Users/ryanbrushett/.kube/config:/Users/ryanbrushett/.kube/config.shopify.cloudplatform
+path=($HOME/.cargo/bin $path)
 path=(/usr/local/opt/coreutils/libexec/gnubin $GOPATH/bin $path)
 path=(/usr/local/opt/curl/bin $path)
 fpath=(/usr/local/share/zsh-completions $fpath)
@@ -52,4 +53,4 @@ prompt pure
 if [[ -f /opt/dev/sh/chruby/chruby.sh ]]; then source /opt/dev/sh/chruby/chruby.sh; fi
 if [[ -f /opt/dev/dev.sh ]]; then source /opt/dev/dev.sh; fi;
 
-chruby 2.6.1
+chruby 2.6.2

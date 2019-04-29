@@ -7,6 +7,7 @@ secrets.json
 .ruby-version
 .starscope.db
 cscope.out
+.env
 
 # swap
 [._]*.s[a-w][a-z]

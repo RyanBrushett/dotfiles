@@ -1,17 +1,29 @@
+# Git Stuff
+alias gfa='git fetch --all --prune;'
+alias gcm='git checkout master;'
+alias gitb='git branch'
+alias grhm='git reset --hard origin/master'
+alias grhh='git reset --hard HEAD'
+alias gdom='git diff origin/master'
+alias grebaseom='git rebase origin/master'
+
+# System Stuff
+alias brewup='brew update; brew upgrade;'
 alias ls="ls --color=auto"
 alias echo="echo -e"
 alias grep="grep --color=auto"
 alias weather="curl wttr.in/ottawa"
 alias weathersj="curl wttr.in/yyt"
-alias hurrdurr="echo 'ᕕ( ᐛ )ᕗ'"
-alias gfa='git fetch --all --prune;'
-alias gcm='git checkout master;'
-alias brewup='brew update; brew upgrade;'
-alias dadjoke='echo `curl -s https://icanhazdadjoke.com/`'
-alias lod='echo "ಠ_ಠ"'
-alias gitb='git branch'
-alias secret-santa='secret-sender'
 alias source_that_shit='. ~/.zshrc;'
+
+# Work Stuff
 alias vim='/usr/local/bin/nvim'
 alias vimdiff='nvim -d'
 alias rt='bundle exec ruby -I test'
+alias be='bundle exec'
+alias secret-santa='secret-sender'
+
+# Stupid Stuff
+alias hurrdurr="echo 'ᕕ( ᐛ )ᕗ'"
+alias dadjoke='echo `curl -s https://icanhazdadjoke.com/`'
+alias lod='echo "ಠ_ಠ"'

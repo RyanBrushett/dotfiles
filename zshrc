@@ -63,3 +63,5 @@ if [[ -f /opt/dev/sh/chruby/chruby.sh ]]; then source /opt/dev/sh/chruby/chruby.
 if [[ -f /opt/dev/dev.sh ]]; then source /opt/dev/dev.sh; fi;
 
 chruby 2.6.5
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

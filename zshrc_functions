@@ -24,3 +24,7 @@ function showk8s() {
 function hidek8s() {
   unset RPROMPT;
 }
+
+function docs() {
+  open dash://$1;
+}

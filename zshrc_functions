@@ -16,9 +16,7 @@ function sourceGcloud {
 }
 
 function showk8s() {
-  if [[ -f /usr/local/share/zsh/site-functions/k8s-context-prompt ]]; then
-    source /usr/local/share/zsh/site-functions/k8s-context-prompt ]];
-  fi
+    kubectl config view | grep 'current-context'
 }
 
 function hidek8s() {

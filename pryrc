@@ -12,11 +12,7 @@ def load_all!
   Rails.application.eager_load!
 end
 
-def seed_db_with_fixtures!
-  require 'active_record/fixtures'
-  fixtures_dir = File.join(Rails.root, '/test/fixtures')
-  Dir.glob(File.join(fixtures_dir,'*.yml')).each do |file|
-    base_name = File.basename(file, '.*')
-    ActiveRecord::FixtureSet.create_fixtures(fixtures_dir, base_name)
-  end
+def do_a_benchmark(&block)
+  require 'benchmark'
+  puts Benchmark.measure(&block)
 end

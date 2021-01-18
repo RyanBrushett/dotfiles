@@ -65,3 +65,4 @@ if [[ -f /opt/dev/dev.sh ]]; then source /opt/dev/dev.sh; fi;
 chruby 2.6.5
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+if [ -e /Users/ryanbrushett/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/ryanbrushett/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

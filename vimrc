@@ -21,6 +21,7 @@ set tw=120
 set cc=+1
 set hlsearch
 set incsearch
+set rtp+=/usr/local/opt/fzf
 
 nnoremap <silent>c :nohl<CR><C-l>
 
@@ -32,5 +33,3 @@ augroup numbertoggle
   autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
   autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 augroup END
-
-execute pathogen#infect()

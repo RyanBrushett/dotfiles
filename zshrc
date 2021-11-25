@@ -62,7 +62,16 @@ done
 if [[ -f /opt/dev/sh/chruby/chruby.sh ]]; then source /opt/dev/sh/chruby/chruby.sh; fi
 if [[ -f /opt/dev/dev.sh ]]; then source /opt/dev/dev.sh; fi;
 
-chruby 3.0.0
+chruby 3.0.1
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 if [ -e /Users/ryanbrushett/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/ryanbrushett/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+# cloudplatform: add Shopify clusters to your local kubernetes config
+export KUBECONFIG=${KUBECONFIG:+$KUBECONFIG:}/Users/ryanbrushett/.kube/config:/Users/ryanbrushett/.kube/config.shopify.cloudplatform
+for file in /Users/ryanbrushett/src/github.com/Shopify/cloudplatform/workflow-utils/*.bash; do source ${file}; done
+export CLOUDSDK_PYTHON=python3.9
+
+[[ -f /opt/dev/sh/chruby/chruby.sh ]] && type chruby >/dev/null 2>&1 || chruby () { source /opt/dev/sh/chruby/chruby.sh; chruby "$@"; }
+
+[[ -x /usr/local/bin/brew ]] && eval $(/usr/local/bin/brew shellenv)

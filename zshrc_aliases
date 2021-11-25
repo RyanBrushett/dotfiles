@@ -1,15 +1,13 @@
 # Git Stuff
 alias gfa='git fetch --all --prune;'
-alias gcm='git checkout master;'
+alias gcm='git checkout main;'
+alias gcmm='git checkout master;'
 alias gitb='git branch'
-alias grhm='git reset --hard origin/master'
 alias grhh='git reset --hard HEAD'
-alias gdom='git diff origin/master'
-alias grebaseom='git rebase origin/master'
+alias gg='git grep -n'
 
 # System Stuff
 alias brewup='brew update; brew upgrade;'
-alias ls="ls --color=auto"
 alias echo="echo -e"
 alias grep="grep --color=auto"
 alias weather="curl wttr.in/ottawa"
@@ -18,7 +16,6 @@ alias source_that_shit='. ~/.zshrc;'
 
 # Work Stuff
 alias vim='/usr/local/bin/nvim'
-alias vimdiff='nvim -d'
 alias rt='bundle exec ruby -I test'
 alias be='bundle exec'
 alias secret-santa='secret-sender'

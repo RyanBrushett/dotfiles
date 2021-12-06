@@ -7,6 +7,8 @@ alias grhh='git reset --hard HEAD'
 alias gg='git grep -n'
 
 # System Stuff
+alias ls='ls -G'
+alias find='gfind'
 alias brewup='brew update; brew upgrade;'
 alias echo="echo -e"
 alias grep="grep --color=auto"

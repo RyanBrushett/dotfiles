@@ -12,11 +12,10 @@ bindkey '^R' history-incremental-search-backward
 zstyle :compinstall filename '$HOME/.zshrc'
 
 typeset -U path
-export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 export GOPATH="$HOME"
 export KUBECONFIG=$HOME/.kube/config
 path=($HOME/.cargo/bin $path)
-path=(/usr/local/opt/coreutils/libexec/gnubin $GOPATH/bin $path)
+path=($GOPATH/bin $path)
 path=(/usr/local/opt/curl/bin $path)
 fpath=(/usr/local/share/zsh-completions $fpath)
 fpath=(${fpath} "/opt/dev/sh/autocomplete/zsh")

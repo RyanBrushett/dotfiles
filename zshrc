@@ -47,5 +47,9 @@ fpath+=$HOME/.zsh/pure
 autoload -U promptinit; promptinit
 prompt pure
 
-chruby 3.0.3
+export GOPATH=$HOME
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:$GOBIN
+
+chruby 3.1.0
 

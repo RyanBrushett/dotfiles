@@ -31,7 +31,7 @@ zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}
 zstyle ':completion:*' menu select=long
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
 zstyle ':completion:*' verbose true
-zstyle :compinstall filename '/Users/ryanbrushett/.zshrc'
+zstyle :compinstall filename '/Users/$(whoami)/.zshrc'
 
 autoload -Uz compinit
 compinit
@@ -39,9 +39,6 @@ compinit
 
 bindkey "^[a" beginning-of-line
 bindkey "^[e" end-of-line
-
-source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
-source /opt/homebrew/opt/chruby/share/chruby/auto.sh
 
 fpath+=$HOME/.zsh/pure
 autoload -U promptinit; promptinit
@@ -51,5 +48,5 @@ export GOPATH=$HOME
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
 
-chruby 3.1.0
+chruby 3.1.1
 

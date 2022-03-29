@@ -9,6 +9,7 @@ secrets.json
 .starscope.db
 cscope.out
 .env
+.hugo_build.lock
 
 # swap
 [._]*.s[a-w][a-z]

@@ -1,0 +1,13 @@
+new-tmux () {
+  SESSION_NAME="default"
+
+  if (( $# > 1 )); then
+    return 1
+  fi
+
+  if (( $# == 1 )); then
+    SESSION_NAME="$1"
+  fi
+
+  tmux new-session -n shell -s $SESSION_NAME;
+}

@@ -48,5 +48,5 @@ export GOPATH=$HOME
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
 
-chruby 3.1.1
+chruby 3.1.2
 

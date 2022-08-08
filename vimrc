@@ -23,7 +23,7 @@ set hlsearch
 set incsearch
 set rtp+=/usr/local/opt/fzf
 
-nnoremap <silent>c :nohl<CR><C-l>
+nnoremap <nowait><silent> <C-C> :noh<CR>
 
 " Automatic toggling of relative and absolute line numbers
 

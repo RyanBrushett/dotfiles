@@ -48,5 +48,7 @@ export GOPATH=$HOME
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
 
-chruby 3.1.2
+if command -v chruby &> /dev/null; then
+  chruby 3.1.2
+fi
 

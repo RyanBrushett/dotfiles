@@ -1,3 +1,3 @@
 ## dotfiles
 
-💻 My boring-ass, unremarkable dotfiles 💻
+My Dotfiles. Handy!

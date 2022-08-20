@@ -11,3 +11,13 @@ new-tmux () {
 
   tmux new-session -n shell -s $SESSION_NAME;
 }
+
+btooth () {
+  if command -v blueutil &> /dev/null; then
+    blueutil -p 0
+    sleep 1
+    blueutil -p 1
+  else
+    echo "blueutil is not installed"
+  fi
+}

@@ -1,4 +1,5 @@
 .idea/
+.devspace/
 .vscode/
 .DS_Store
 npm-debug.log

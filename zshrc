@@ -1,6 +1,3 @@
-CASE_SENSITIVE="false"
-HYPHEN_INSENSITIVE="true"
-COMPLETION_WAITING_DOTS="true"
 HISTFILE=~/.histfile
 HISTSIZE=5000
 SAVEHIST=1000
@@ -47,6 +44,8 @@ prompt pure
 export GOPATH=$HOME
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
+
+if [[ -d ~/.kube/configs ]]; then export KUBECONFIG=$(ls ${HOME}/.kube/configs/* | tr '\n' ':')$HOME/.kube/config; fi
 
 if command -v chruby &> /dev/null; then
   chruby 3.1.2

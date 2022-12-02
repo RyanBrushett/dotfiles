@@ -6,7 +6,6 @@ npm-debug.log
 .swp
 .tags
 secrets.json
-.ruby-version
 .starscope.db
 cscope.out
 .env

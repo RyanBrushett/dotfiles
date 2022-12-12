@@ -21,8 +21,6 @@ alias vim='/opt/homebrew/bin/nvim'
 alias rt='bundle exec ruby -I test'
 alias be='bundle exec'
 alias secret-santa='secret-sender'
-alias chctx="kubectx"
-alias chns="kubens"
 
 # Stupid Stuff
 alias hurrdurr="echo 'ᕕ( ᐛ )ᕗ'"

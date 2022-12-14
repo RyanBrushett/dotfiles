@@ -45,8 +45,6 @@ export GOPATH=$HOME
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
 
-if [[ -d ~/.kube/configs ]]; then export KUBECONFIG=$(ls ${HOME}/.kube/configs/* | tr '\n' ':')$HOME/.kube/config; fi
-
 if command -v chruby &> /dev/null; then
   chruby 3.1.2
 fi

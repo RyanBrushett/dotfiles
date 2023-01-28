@@ -8,9 +8,11 @@ bindkey '^R' history-incremental-search-backward
 zstyle :compinstall filename '$HOME/.zshrc'
 
 typeset -U path
-fpath=(/opt/homebrew/share/zsh-completions $fpath)
-autoload -U compinit
-compinit
+if type brew &>/dev/null; then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+  autoload -Uz compinit
+  compinit
+fi
 
 if [[ -f ~/.zshrc_aliases ]]; then source ~/.zshrc_aliases; fi
 if [[ -f ~/.zshrc_functions ]]; then source ~/.zshrc_functions; fi

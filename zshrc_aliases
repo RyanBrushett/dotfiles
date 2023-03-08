@@ -1,5 +1,6 @@
 # Git Stuff
 alias gfa='git fetch --all --prune;'
+alias gcl='git checkout -;'
 alias gcm='git checkout main;'
 alias gcmm='git checkout master;'
 alias gitb='git branch'

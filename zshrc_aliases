@@ -1,11 +1,10 @@
 # Git Stuff
 alias gfa='git fetch --all --prune;'
-alias gcl='git checkout -;'
 alias gcm='git checkout main;'
 alias gcmm='git checkout master;'
 alias gitb='git branch'
-alias grhh='git reset --hard HEAD'
 alias gg='git grep -n'
+alias gco='git checkout'
 
 # System Stuff
 alias ls='ls -G'

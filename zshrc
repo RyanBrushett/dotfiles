@@ -71,3 +71,6 @@ export PATH="/opt/homebrew/opt/mysql@8.0/bin:$PATH"
 
 # bun completions
 [ -s "/Users/ryan.brushett/.bunv/versions/1.3.5/_bun" ] && source "/Users/ryan.brushett/.bunv/versions/1.3.5/_bun"
+
+if [[ -x /opt/homebrew/bin/wtp ]]; then eval "$(wtp shell-init zsh)"; fi
+

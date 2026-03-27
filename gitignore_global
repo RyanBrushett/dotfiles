@@ -1,6 +1,6 @@
 .idea/
 .claude/
-AGENTS.md
+CLAUDE.local.md
 .devspace/
 .DS_Store
 npm-debug.log

@@ -21,7 +21,7 @@ set tw=120
 set cc=+1
 set hlsearch
 set incsearch
-set rtp+=/usr/local/opt/fzf
+set rtp+=/opt/homebrew/opt/fzf
 
 nnoremap <nowait><silent> <C-C> :noh<CR>
 

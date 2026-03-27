@@ -15,21 +15,16 @@ setopt EXTENDED_HISTORY          # Write the history file in the ':start:elapsed
 setopt HIST_EXPIRE_DUPS_FIRST    # Expire a duplicate event first when trimming history.
 setopt HIST_FIND_NO_DUPS         # Do not display a previously found event.
 setopt HIST_IGNORE_ALL_DUPS      # Delete an old recorded event if a new event is a duplicate.
-setopt HIST_IGNORE_DUPS          # Do not record an event that was just recorded again.
 setopt HIST_IGNORE_SPACE         # Do not record an event starting with a space.
 setopt HIST_SAVE_NO_DUPS         # Do not write a duplicate event to the history file.
-setopt SHARE_HISTORY             # Share history between all ses
-setopt inc_append_history
-setopt append_history extendedglob nomatch
+setopt SHARE_HISTORY             # Share history between all sessions (implies INC_APPEND_HISTORY).
+setopt extendedglob nomatch
 unsetopt autocd beep notify
 bindkey -v
 bindkey '^R' history-incremental-search-backward
-zstyle :compinstall filename '$HOME/.zshrc'
-
 typeset -U path
 if type brew &>/dev/null; then
   FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
-  FPATH=~/.rbenv/completions:"$FPATH"
   autoload -Uz compinit
   compinit
 fi
@@ -50,7 +45,7 @@ zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}
 zstyle ':completion:*' menu select=long
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
 zstyle ':completion:*' verbose true
-zstyle :compinstall filename '/Users/$(whoami)/.zshrc'
+zstyle :compinstall filename "$HOME/.zshrc"
 
 bindkey "^[a" beginning-of-line
 bindkey "^[e" end-of-line
@@ -68,9 +63,6 @@ export PATH="/opt/homebrew/opt/mysql@8.0/bin:$PATH"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# bun completions
-[ -s "/Users/ryan.brushett/.bunv/versions/1.3.5/_bun" ] && source "/Users/ryan.brushett/.bunv/versions/1.3.5/_bun"
 
 if [[ -x /opt/homebrew/bin/wtp ]]; then eval "$(wtp shell-init zsh)"; fi
 

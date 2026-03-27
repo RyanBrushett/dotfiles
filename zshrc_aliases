@@ -8,9 +8,7 @@ alias gco='git checkout'
 
 # System Stuff
 alias ls='ls -G'
-alias find='gfind'
 alias brewup='brew update; brew upgrade; brew cleanup --prune=all;'
-alias echo="echo -e"
 alias grep="grep --color=auto"
 alias weather="curl wttr.in/ottawa"
 alias weathersj="curl wttr.in/yyt"

@@ -1,0 +1,25 @@
+[core]
+	excludesfile = ~/.gitignore_global
+	fsmonitor = true
+[diff]
+  tool = vscode
+[difftool "vscode"]
+  cmd = code --wait --diff $LOCAL $REMOTE
+[merge]
+  tool = vscode
+[mergetool "vscode"]
+  cmd = code --wait --merge $REMOTE $LOCAL $BASE $MERGED
+[mergetool]
+	keepBackup = false
+[push]
+	autoSetupRemote = true
+[help]
+	autocorrect = prompt
+[init]
+	defaultBranch = main
+[alias]
+  prune-old = "!r() { period=\"${1:-2w}\"; default_branch=$(git symbolic-ref refs/remotes/origin/HEAD --short 2>/dev/null | sed 's|origin/||'); default_branch=\"${default_branch:-main}\"; git for-each-ref --format='%(refname:short) %(committerdate:unix)' refs/heads/ | awk -v cutoff=$(date -v-\"$period\" +%s) -v skip=\"$default_branch\" '$2 < cutoff && $1 != skip {print $1}' | xargs git branch --delete; }; r"
+  prune-old-force = "!r() { period=\"${1:-2m}\"; default_branch=$(git symbolic-ref refs/remotes/origin/HEAD --short 2>/dev/null | sed 's|origin/||'); default_branch=\"${default_branch:-main}\"; git for-each-ref --format='%(refname:short) %(committerdate:unix)' refs/heads/ | awk -v cutoff=$(date -v-\"$period\" +%s) -v skip=\"$default_branch\" '$2 < cutoff && $1 != skip {print $1}' | xargs git branch -D; }; r"
+  recent = "!r() { default_branch=$(git symbolic-ref refs/remotes/origin/HEAD --short 2>/dev/null || echo 'origin/master'); refbranch=\"${1:-$default_branch}\"; count=\"${2:-100}\"; git for-each-ref --sort=-committerdate refs/heads --format='%(refname:short)|%(HEAD)%(color:yellow)%(refname:short)|%(color:bold green)%(committerdate:relative)|%(color:blue)%(subject)|%(color:magenta)%(authorname)%(color:reset)' --color=always --count=\"$count\" | while read line; do branch=$(echo \"$line\" | awk 'BEGIN { FS = \"|\" }; { print $1 }' | tr -d '*'); ahead=$(git rev-list --count \"${refbranch}..${branch}\"); behind=$(git rev-list --count \"${branch}..${refbranch}\"); colorline=$(echo \"$line\" | sed 's/^[^|]*|//'); echo \"$ahead|$behind|$colorline\" | awk -F'|' -vOFS='|' '{$5=substr($5,1,70)}1'; done | ( echo \"ahead|behind||branch|lastcommit|message|author\\n\" && cat) | column -ts'|'; }; r"
+[advice]
+	skippedCherryPicks = false

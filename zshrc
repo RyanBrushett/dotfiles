@@ -4,7 +4,10 @@
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-source ~/.zsh/powerlevel10k/powerlevel10k.zsh-theme
+
+if [[ -f ~/.zsh/powerlevel10k/powerlevel10k.zsh-theme ]]; then
+  source ~/.zsh/powerlevel10k/powerlevel10k.zsh-theme
+fi
 
 HISTFILE=~/.histfile
 HISTSIZE=5000
@@ -55,7 +58,7 @@ export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
 
 if command -v chruby &> /dev/null; then
-  chruby 3.4.7
+  chruby 4.0.2
 fi
 
 PATH="$PATH:$HOME/.rd/bin"

@@ -4,23 +4,23 @@
 # Symlinks dotfiles from this repo to their expected locations.
 # Backs up any existing non-symlink files before overwriting.
 
-require "fileutils"
-require "pathname"
+require 'fileutils'
+require 'pathname'
 
 DOTFILES_DIR = Pathname.new(__dir__).expand_path
 HOME = Pathname.new(Dir.home)
 
 LINKS = {
-  "zshrc"            => ".zshrc",
-  "zshrc_aliases"    => ".zshrc_aliases",
-  "zshrc_functions"  => ".zshrc_functions",
-  "vimrc"            => ".vimrc",
-  "tmux.conf"        => ".tmux.conf",
-  "pryrc"            => ".pryrc",
-  "irbrc"            => ".irbrc",
-  "gitignore_global" => ".gitignore_global",
-  "gitconfig_shared" => ".gitconfig_shared",
-  "config/nvim/init.vim" => ".config/nvim/init.vim",
+  'zshrc' => '.zshrc',
+  'zshrc_aliases' => '.zshrc_aliases',
+  'zshrc_functions' => '.zshrc_functions',
+  'vimrc' => '.vimrc',
+  'tmux.conf' => '.tmux.conf',
+  'pryrc' => '.pryrc',
+  'irbrc' => '.irbrc',
+  'gitignore_global' => '.gitignore_global',
+  'gitconfig_shared' => '.gitconfig_shared',
+  'config/nvim/init.vim' => '.config/nvim/init.vim'
 }.freeze
 
 def already_linked?(source, target)
@@ -35,11 +35,13 @@ end
 
 def remove_stale_symlink(target)
   return unless target.symlink?
+
   target.delete
 end
 
 def ensure_parent_dir(target)
   return if target.dirname.exist?
+
   FileUtils.mkdir_p(target.dirname)
 end
 
@@ -51,6 +53,17 @@ def install_link(source, target)
   ensure_parent_dir(target)
   File.symlink(source, target)
 end
+
+def clone_powerlevel10k
+  zsh_dir = HOME.join('.zsh')
+  p10k_dir = zsh_dir.join('powerlevel10k')
+  return if p10k_dir.join('powerlevel10k.zsh-theme').exist?
+
+  FileUtils.mkdir_p(zsh_dir)
+  system('git', 'clone', '--depth=1', 'https://github.com/romkatv/powerlevel10k.git', p10k_dir.to_s)
+end
+
+clone_powerlevel10k
 
 LINKS.each do |repo_path, home_path|
   source = DOTFILES_DIR.join(repo_path)

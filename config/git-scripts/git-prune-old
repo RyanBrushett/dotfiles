@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# Delete local branches whose last commit is older than a cutoff period.
+# Usage: git prune-old [period]   (default: 2w; see `git help date-formats`)
+# Skips the default branch. Uses a safe `--delete` (refuses unmerged branches).
+set -euo pipefail
+
+period="${1:-2w}"
+
+default_branch=$(git symbolic-ref refs/remotes/origin/HEAD --short 2>/dev/null | sed 's|origin/||')
+default_branch="${default_branch:-main}"
+
+cutoff=$(date -v-"$period" +%s)
+
+stale=$(git for-each-ref --format='%(refname:short) %(committerdate:unix)' refs/heads/ \
+  | awk -v cutoff="$cutoff" -v skip="$default_branch" \
+      '$2 < cutoff && $1 != skip {print $1}')
+
+if [[ -z "$stale" ]]; then
+  echo "No branches older than $period to prune."
+  exit 0
+fi
+
+echo "$stale" | while read -r branch; do
+  git branch --delete "$branch"
+done

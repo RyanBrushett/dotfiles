@@ -4,7 +4,6 @@ CLAUDE.local.md
 .devspace/
 .DS_Store
 npm-debug.log
-.swp
 .tags
 secrets.json
 .starscope.db
@@ -27,3 +26,4 @@ Session.vim
 # auto-generated tag files
 tags
 lsp/
+*brushett*

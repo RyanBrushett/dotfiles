@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+# Show local branches by most-recent commit, with ahead/behind counts vs a ref.
+# Usage: git recent [ref-branch] [count]   (defaults: origin/HEAD, 100)
+set -euo pipefail
+
+default_branch=$(git symbolic-ref refs/remotes/origin/HEAD --short 2>/dev/null || echo 'origin/master')
+refbranch="${1:-$default_branch}"
+count="${2:-100}"
+
+format='%(refname:short)|%(HEAD)%(color:yellow)%(refname:short)|%(color:bold green)%(committerdate:relative)|%(color:blue)%(subject)|%(color:magenta)%(authorname)%(color:reset)'
+
+print_rows() {
+  git for-each-ref --sort=-committerdate refs/heads \
+    --format="$format" --color=always --count="$count" \
+  | while IFS= read -r line; do
+      branch=$(echo "$line" | awk 'BEGIN { FS = "|" } { print $1 }' | tr -d '*')
+      ahead=$(git rev-list --count "${refbranch}..${branch}")
+      behind=$(git rev-list --count "${branch}..${refbranch}")
+      colorline=$(echo "$line" | sed 's/^[^|]*|//')
+      # Truncate the subject (field 5) to 70 chars to keep rows readable.
+      echo "$ahead|$behind|$colorline" \
+        | awk -F'|' -v OFS='|' '{ $5 = substr($5, 1, 70) } 1'
+    done
+}
+
+{
+  echo "ahead|behind||branch|lastcommit|message|author"
+  print_rows
+} | column -t -s '|'

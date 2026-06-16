@@ -1,18 +1,17 @@
 # Git Stuff
-alias gfa='git fetch --all --prune;'
-alias gcm='git checkout main;'
-alias gcmm='git checkout master;'
+alias gfa='git fetch --all --prune'
+alias gcm='git checkout main'
+alias gcmm='git checkout master'
 alias gitb='git branch'
 alias gg='git grep -n'
 alias gco='git checkout'
 
 # System Stuff
 alias ls='ls -G'
-alias brewup='brew update; brew upgrade; brew cleanup --prune=all;'
+alias brewup='brew update; brew upgrade; brew cleanup --prune=all'
 alias grep="grep --color=auto"
 alias weather="curl wttr.in/ottawa"
 alias weathersj="curl wttr.in/yyt"
-alias source_that_shit='. ~/.zshrc;'
 
 # Work Stuff
 alias vim='/opt/homebrew/bin/nvim'

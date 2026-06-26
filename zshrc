@@ -72,6 +72,9 @@ export EDITOR=/opt/homebrew/bin/nvim
 export LANGUAGE=en_GB.UTF-8
 export LC_ALL=en_GB.UTF-8
 export HOMEBREW_NO_ASK=1
+export HOMEBREW_REQUIRE_TAP_TRUST=1
+export HOMEBREW_NO_UPGRADE_QUIT_CASKS=1
+export HOMEBREW_NO_UPGRADE_AUTO_UPDATES_CASKS=1
 
 # ---- Tools
 if command -v chruby &>/dev/null; then

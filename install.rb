@@ -23,7 +23,8 @@ LINKS = {
   'config/nvim/init.vim' => '.config/nvim/init.vim',
   'config/git-scripts/git-prune-old' => '.config/git/scripts/git-prune-old',
   'config/git-scripts/git-prune-old-force' => '.config/git/scripts/git-prune-old-force',
-  'config/git-scripts/git-recent' => '.config/git/scripts/git-recent'
+  'config/git-scripts/git-recent' => '.config/git/scripts/git-recent',
+  'config/git-scripts/git-restack' => '.config/git/scripts/git-restack'
 }.freeze
 
 def already_linked?(source, target)

@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# Restack the current branch (and, with rebase.updateRefs, every branch stacked
+# above it) onto the latest remote base.
+# Usage: git restack [base-branch]   (defaults: main)
+#
+# Names the cut-point explicitly (the merge-base of the remote base and HEAD), so
+# it is correct whether the base was advanced or rewritten upstream. Fetches the
+# base first so it lands on what is actually on the remote, not a stale local ref.
+# Does NOT push: review the restacked stack, then force-push each branch yourself.
+set -euo pipefail
+
+base="${1:-main}"
+
+git fetch origin "$base"
+git rebase --onto "origin/$base" "$(git merge-base "origin/$base" HEAD)"

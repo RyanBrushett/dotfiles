@@ -24,7 +24,8 @@ LINKS = {
   'config/git-scripts/git-prune-old' => '.config/git/scripts/git-prune-old',
   'config/git-scripts/git-prune-old-force' => '.config/git/scripts/git-prune-old-force',
   'config/git-scripts/git-recent' => '.config/git/scripts/git-recent',
-  'config/git-scripts/git-restack' => '.config/git/scripts/git-restack'
+  'config/git-scripts/git-restack' => '.config/git/scripts/git-restack',
+  'config/hunk/config.toml' => '.config/hunk/config.toml'
 }.freeze
 
 def already_linked?(source, target)

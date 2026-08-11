@@ -1,0 +1,8 @@
+mode = "auto"
+vcs = "git"
+tab_width = 2
+wrap_lines = false
+agent_notes = true
+theme = "auto"
+line_numbers = true
+exclude_untracked = false

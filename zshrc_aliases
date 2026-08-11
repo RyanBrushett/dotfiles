@@ -5,7 +5,6 @@ alias gcmm='git checkout master'
 alias gitb='git branch'
 alias gg='git grep -n'
 alias gco='git checkout'
-alias hdw='hunk diff --watch'
 
 # System Stuff
 alias ls='ls -G'

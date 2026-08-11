@@ -8,6 +8,34 @@ new-tmux () {
   tmux new-session -n shell -s "$session_name"
 }
 
+# Watch a hunk diff against a base branch.
+# Usage: hdw [base-branch]   (default: repo's actual default branch, freshly fetched)
+#
+# No argument: syncs the detected default branch from origin first, since you
+# always want that comparison to be current. An explicit argument (e.g. a stack
+# parent) is used as-is with no fetch, since that's usually a local branch you're
+# actively working on rather than something to pull from origin.
+hdw () {
+  if (( $# > 1 )); then
+    echo "usage: hdw [base-branch]" >&2
+    return 1
+  fi
+
+  local base="$1"
+
+  if [[ -z "$base" ]]; then
+    base=$(git symbolic-ref refs/remotes/origin/HEAD --short 2>/dev/null | sed 's|origin/||')
+    base="${base:-main}"
+    git fetch origin "$base" || return 1
+    base="origin/$base"
+  fi
+
+  local merge_base
+  merge_base=$(git merge-base "$base" HEAD) || return 1
+
+  hunk diff --watch "$merge_base"
+}
+
 btooth () {
   if command -v blueutil &> /dev/null; then
     blueutil -p 0

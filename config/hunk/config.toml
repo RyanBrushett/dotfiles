@@ -1,8 +1,12 @@
-mode = "auto"
+mode = "split"
 vcs = "git"
 tab_width = 2
 wrap_lines = false
 agent_notes = true
-theme = "auto"
+theme = "aurora-x"
 line_numbers = true
 exclude_untracked = false
+hunk_headers = true
+menu_bar = true
+copy_decorations = false
+cursor_line = "row"

@@ -89,3 +89,9 @@ if [[ -x /opt/homebrew/bin/wtp ]]; then eval "$(wtp shell-init zsh)"; fi
 
 # ---- Powerlevel10k prompt config (run `p10k configure` or edit ~/.p10k.zsh)
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# KrisB's `goto`
+if [[ -f "$HOME/.goto.zsh" ]]; then
+  source "$HOME/.goto.zsh"
+  export GOTO_EXTRA_PRUNE=vendor
+fi

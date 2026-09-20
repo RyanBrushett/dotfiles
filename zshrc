@@ -75,16 +75,16 @@ export HOMEBREW_NO_ASK=1
 export HOMEBREW_NO_UPGRADE_QUIT_CASKS=1
 export HOMEBREW_NO_UPGRADE_AUTO_UPDATES_CASKS=1
 
-# ---- Tools
-if command -v chruby &>/dev/null; then
-  chruby 4.0.2
-fi
-if [[ -x /opt/homebrew/bin/wtp ]]; then eval "$(wtp shell-init zsh)"; fi
-
 # ---- Sourced extras (~/.zshrc_additional is untracked, for local overrides)
 [[ -f ~/.zshrc_aliases ]]    && source ~/.zshrc_aliases
 [[ -f ~/.zshrc_functions ]]  && source ~/.zshrc_functions
 [[ -f ~/.zshrc_additional ]] && source ~/.zshrc_additional
+
+# ---- Tools
+if command -v chruby &>/dev/null; then
+  chruby 4.0.7
+fi
+if [[ -x /opt/homebrew/bin/wtp ]]; then eval "$(wtp shell-init zsh)"; fi
 
 # ---- Powerlevel10k prompt config (run `p10k configure` or edit ~/.p10k.zsh)
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

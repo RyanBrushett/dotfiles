@@ -36,6 +36,32 @@ hdw () {
   hunk diff --watch "$merge_base"
 }
 
+# Reset kube context and namespace to the local rancher-desktop cluster.
+# Re-reads the live config afterwards rather than trusting exit codes, and
+# shouts if kubectl ends up anywhere other than rancher-desktop/default.
+kuberst () {
+  local want_context="rancher-desktop"
+  local want_namespace="default"
+
+  kubectl config use-context "$want_context" >/dev/null &&
+    kubectl config set-context --current --namespace="$want_namespace" >/dev/null
+
+  local context namespace
+  context=$(kubectl config current-context 2>/dev/null)
+  namespace=$(kubectl config view --minify --output 'jsonpath={..namespace}' 2>/dev/null)
+  # An unset namespace on a context means kubectl falls back to "default".
+  namespace="${namespace:-default}"
+
+  if [[ "$context" != "$want_context" || "$namespace" != "$want_namespace" ]]; then
+    printf '\e[1;41;97m %s \e[0m\n' "KUBERST FAILED" >&2
+    printf '\e[1;31mkubectl is pointing at context: %s\e[0m\n' "${context:-<unknown>}" >&2
+    printf '\e[1;31mnamespace: %s\e[0m\n' "$namespace" >&2
+    return 1
+  fi
+
+  printf '\e[32mkubectl -> %s/%s\e[0m\n' "$context" "$namespace"
+}
+
 btooth () {
   if command -v blueutil &> /dev/null; then
     blueutil -p 0

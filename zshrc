@@ -86,6 +86,10 @@ if command -v chruby &>/dev/null; then
 fi
 if [[ -x /opt/homebrew/bin/wtp ]]; then eval "$(wtp shell-init zsh)"; fi
 
+# Google Cloud SDK (brew: gcloud-cli)
+[[ -f /opt/homebrew/share/google-cloud-sdk/path.zsh.inc ]]       && source /opt/homebrew/share/google-cloud-sdk/path.zsh.inc
+[[ -f /opt/homebrew/share/google-cloud-sdk/completion.zsh.inc ]] && source /opt/homebrew/share/google-cloud-sdk/completion.zsh.inc
+
 # ---- Powerlevel10k prompt config (run `p10k configure` or edit ~/.p10k.zsh)
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 

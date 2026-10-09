@@ -20,7 +20,9 @@ path=(
   $path
   $GOBIN
   $HOME/.rd/bin
+  $HOME/.cargo/bin
 )
+path=($^path(N-/))
 export PATH
 
 # ---- Completion

@@ -12,6 +12,7 @@ alias brewup='brew update; brew upgrade; brew cleanup --prune=all'
 alias grep="grep --color=auto"
 alias weather="curl wttr.in/ottawa"
 alias weathersj="curl wttr.in/yyt"
+alias prettymd='prettier --prose-wrap always --print-width 90 --write'
 
 # Work Stuff
 alias vim='/opt/homebrew/bin/nvim'

@@ -98,5 +98,5 @@ if [[ -x /opt/homebrew/bin/wtp ]]; then eval "$(wtp shell-init zsh)"; fi
 # KrisB's `goto`
 if [[ -f "$HOMEBREW_PREFIX/share/goto/goto.zsh" ]]; then
   source "$HOMEBREW_PREFIX/share/goto/goto.zsh"
-  export GOTO_EXTRA_PRUNE=vendor,*/worktrees
+  export GOTO_EXTRA_PRUNE=vendor,worktrees
 fi

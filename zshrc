@@ -96,7 +96,7 @@ if [[ -x /opt/homebrew/bin/wtp ]]; then eval "$(wtp shell-init zsh)"; fi
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # KrisB's `goto`
-if [[ -f "$HOME/.goto.zsh" ]]; then
-  source "$HOME/.goto.zsh"
-  export GOTO_EXTRA_PRUNE=vendor
+if [[ -f "$HOMEBREW_PREFIX/share/goto/goto.zsh" ]]; then
+  source "$HOMEBREW_PREFIX/share/goto/goto.zsh"
+  export GOTO_EXTRA_PRUNE=vendor,*/worktrees
 fi
